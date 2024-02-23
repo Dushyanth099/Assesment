@@ -1,0 +1,76 @@
+-- CREATE TABLE Course (
+--     course_id INT PRIMARY KEY,
+--     course_name VARCHAR(50),
+--     Fees INT,
+--     Duration VARCHAR(20)
+-- );
+-- INSERT INTO Course (course_id, course_name, Fees, Duration)
+-- VALUES
+--     (1, 'FSD', 80000, '6 months'),
+--     (2, 'PGA', 125000, '9 months'),
+--     (3, 'Digital marketing', 90000, '6 months'),
+--     (4, 'Cibop', 85000, '4 months');
+-- CREATE TABLE Student (
+--     Stud_id INT PRIMARY KEY,
+--     Stud_name VARCHAR(50),
+--     Qualification VARCHAR(50),
+--     email VARCHAR(50),
+--     contact VARCHAR(15),
+--     course_id INT,
+--     Date_of_Joining DATE,
+--     FOREIGN KEY (course_id) REFERENCES Course(course_id)
+-- );
+-- INSERT INTO Student (Stud_id, Stud_name, Qualification, email, contact, course_id, Date_of_Joining)
+-- VALUES
+--     (1, 'Fathima', 'MCA', 'fathima@gmail.com', '9876543210', 1, '2024-02-12'),
+--     (2, 'Raveena', 'BSc', 'raveena@gmail.com', '8776543219', 2, '2024-02-20'),
+--     (3, 'Vinoth', 'MSc', 'vinoth@gmail.com', '8776543210', 1, '2024-01-17'),
+--     (4, 'Tarun', 'BCom', 'tarun@gmail.com', '6778976543', 3, '2023-09-24'),
+--     (5, 'Rajesh', 'BCom', 'rajesh@gmail.com', '8779023456', 3, '2023-08-17'),
+--     (6, 'Kalyani', 'BSc', 'kalyani@gmail.com', '7889012345', 2, '2023-10-23'),
+--     (7, 'Hemanth', 'MSc', 'hemanth@gmail.com', '8776543210', 1, '2023-11-27');
+-- SELECT MAX(Fees) AS MaxFees
+-- FROM Course;
+-- SELECT SUM(Fees) AS TotalFees
+-- FROM Course;
+-- SELECT s.*, c.Fees, c.Duration
+-- FROM Student s
+-- JOIN Course c ON s.course_id = c.course_id
+-- WHERE c.course_name = 'FSD';
+-- SELECT s.*, c.Fees, c.Duration
+-- FROM Student s
+-- JOIN Course c ON s.course_id = c.course_id
+-- WHERE c.course_name IN ('PGA', 'FSD');
+-- SELECT s.*, c.course_name
+-- FROM Student s
+-- JOIN Course c ON s.course_id = c.course_id;
+-- SELECT *
+-- FROM Student
+-- WHERE Stud_id BETWEEN 4 AND 7
+-- ORDER BY Stud_id ASC;
+-- Creating the Person table
+-- CREATE TABLE Person (
+--     ID INT PRIMARY KEY,
+--     Name VARCHAR(50),
+--     email VARCHAR(50),
+--     contact VARCHAR(15)
+-- );
+--  Inserting values into the Person table
+--  INSERT INTO Person (ID, Name, email, contact)
+-- VALUES
+--     (1, 'Fathima', 'fathima@gmail.com', '9876543210'),
+--     (2, 'Raveena', 'raveena@gmail.com', '8776543219'),
+--     (3, 'Vinoth', 'vinoth@gmail.com', '8776543210'),
+--     (4, 'Tarun', 'tarun@gmail.com', '6778976543'),
+--     (5, 'Rajesh', 'rajesh@gmail.com', '8779023456'),
+--     (6, 'Kalyani', 'kalyani@gmail.com', '7889012345'),
+--     (7, 'Hemanth', 'hemanth@gmail.com', '8776543210');
+-- SELECT s.*, p.Name, p.email, p.contact
+-- FROM Student s
+-- JOIN Person p ON s.Stud_id = p.ID;
+-- SELECT *
+-- FROM Student
+-- WHERE Date_of_Joining BETWEEN '2023-10-11' AND '2024-02-23';
+SELECT *
+FROM Student
+WHERE Stud_name LIKE 'R%';
